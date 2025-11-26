@@ -77,6 +77,10 @@ def print_info_mixed(*args, city, country):
     print(f"Country: {country}")
 print_info_mixed(1, 2, 3, city="Los Angeles", country="USA")
 
+# 命名关键字参数必须传入参数名，否则调用会报错
+# 但同时, 命名关键字参数允许不按照定义时的顺序传入参数
+print_info_mixed(1, 2, 3, country="USA", city="Los Angeles")
+
 # 函数可以返回多个值
 # 实际上python函数只能返回一个值，但可以通过返回一个tuple来实现返回多个值的效果
 def divide_and_remainder(a, b):
