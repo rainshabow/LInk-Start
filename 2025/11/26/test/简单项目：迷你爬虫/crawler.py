@@ -16,6 +16,7 @@ def getTitle(url: str) -> str | None:
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
     }
     response = requests.get(url=url,headers=headers)
+    #正则表达式筛选标题
     parr = re.findall(r"<title[^>]*>(.*?)</title>", response.text, re.IGNORECASE | re.DOTALL)
     title = re.sub(r"\s+", " ", parr[0]).strip()
     return title
